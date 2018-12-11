@@ -6,14 +6,13 @@ $(document).ready(function(){
   }
   $('.quadrato').click(function(){
     var thisquadrato = $(this);
-
     $.ajax({
       url: 'https://www.boolean.careers/api/random/int',
       method: 'GET',
       success: function(data)
       {
-        var numero = "";
         var numero = data.response;
+        thisquadrato.text(data.response);
         console.log(data);
         if (numero <= 5) {
           $(thisquadrato).addClass('verde');
